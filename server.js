@@ -1,6 +1,7 @@
 const express= require('express');
 const app=express();
 const db = require('./db')
+require('dotenv').config();
 
 app.get('/',function(req,res){
     res.send("hello world")
@@ -13,8 +14,8 @@ app.use('/',personRouters)
 
 //import person routes
 
+const PORT=process.env.PORT || 3000
 
-
-app.listen(8080,()=>{
+app.listen(PORT,()=>{
     console.log("port is listening in 3000");
 })

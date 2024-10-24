@@ -26,7 +26,9 @@
 
 // module.exports=db;
 const mongoose=require('mongoose');
-const mongodbURL='mongodb://localhost:27017/mydatabase'
+require('dotenv').config();
+//  const mongodbURL=process.env.MONGODB_URL_LOCAL
+ const mongodbURL=process.env.MOMGODB_URL
 mongoose.connect(mongodbURL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
